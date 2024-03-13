@@ -10,11 +10,17 @@ public class WeaponController : MonoBehaviour
     //transform gracza
     Transform player;
 
+    GameObject projectilePrefab;
+
+    Transform projectileSpawn;
+
     // Start is called before the first frame update
     void Start()
     {
         // pozycja gracza
         player = GameObject.FindWithTag("Player").transform;
+
+        projectileSpawn = transform.Find("ProjectileSpawn").transform;
     }
 
     // Update is called once per frame
@@ -25,7 +31,11 @@ public class WeaponController : MonoBehaviour
         {
             Debug.Log("Celuje do: " + target.gameObject.name);
             transform.LookAt(target.position + Vector3.up);
+
+            Instantiate(projectilePrefab, target.position, Quaternion.identity);
         }
+
+
     }
     Transform TagTargeter(string tag)
     {
