@@ -28,7 +28,7 @@ public class CameraController : MonoBehaviour
         //przesuń kamerę w kierunku celu
         //transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime);
         
-        //trzecia metoda - smoothdamp
+        
         transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref cameraSpeed, 0.3f);
     }
 }
