@@ -128,5 +128,8 @@ public class LevelManager : MonoBehaviour
         //poka¿ ekran koñca gry
         gameOverScreen.SetActive(true);
         
+
+        //koniec muzyki
+        Camera.main.transform.GetComponent<AudioSource>().Stop();
     }
 }
